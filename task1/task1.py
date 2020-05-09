@@ -8,7 +8,7 @@ class Arrival(object):
         self.time  = time
         self.token = token
     def getter(self):
-        print(dedent(f"""
+        return (dedent(f"""
             CNIC    : {self.cnic}
             Phone # : {self.phone}
             Time    : {self.time}
@@ -32,7 +32,6 @@ while True:
 
     print("End day?")
     if "yes" in input(">"):
-
         with open(f"{datetime.date.today()}.txt","w") as f:
             f.write(data_arrival[token].getter())
 

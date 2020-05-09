@@ -33,7 +33,7 @@ while True:
     print("End day?")
     if "yes" in input(">"):
 
-        with open(f"{datetime.date.today()}.txt","w"):
+        with open(f"{datetime.date.today()}.txt","w") as f:
             f.write(data_arrival[token].getter())
 
         break

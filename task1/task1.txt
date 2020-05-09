@@ -1,0 +1,3 @@
+Program starts with a menu choosing between arrival and departure. Upon selection of arrival, user inputs cnic and phone number which are validated and stored in arrays. The program then records time of entry via system clock and also stores it in an array. A token number is then assigned to the cnic. Upon selection for departure, the program asks for the token number. Upon input of token number, the program uses the system clock to record the time of exit for that particular cnic. Another option to end the day should also be on the menu. Upon selecting that option; the CNIC, phone number and arrival and departure times should be written to a text file in the following format:
+
+CNIC~Phone~ArrivalTime~DepatureTime

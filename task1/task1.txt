@@ -4,5 +4,5 @@ CNIC~Phone~ArrivalTime~DepatureTime
 
 A new file should be created for each day, with the date as filename. File extension should be .txt
 
-Time stored in file should be obtained using time() function in python, storing it in full format including date. This will help processing it later on in task2.
+Time stored in file should be obtained using time() function in python, storing it in full format including date. This will help processing it later on in task2, given that using Epoch time is impractical due to difference in operatime systems.
 

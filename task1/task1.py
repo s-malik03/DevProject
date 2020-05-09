@@ -23,8 +23,8 @@ while True:
     arrival_or_departure  = input(">")
 
     if "arrival" in arrival_or_departure:
-        cnic  = input("")
-        phone = input("")
+        cnic  = input("Input CNIC ")
+        phone = input("Input Phone Number")
         time  = datetime.datetime.now()
         token = token+1
         data_arrival[token] = Arrival(cnic, phone, time, token)

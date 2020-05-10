@@ -3,6 +3,8 @@ from textwrap import dedent
 
 class Arrival(object):
     def __init__(self, cnic, phone, time, token, departure_time):
+        assert type(self.cnic) == int()
+        assert len(self.cnic)  == 14
         self.cnic  = cnic
         self.phone = phone
         self.time  = time
@@ -21,10 +23,10 @@ class Arrival(object):
 
 #change the format as mentioned in task1.txt
 token = 0
-
+data_arrival   = {}
 while True:
 
-    data_arrival   = {}
+
     print("Arrival or Departure?")
 
     arrival_or_departure  = input(">")
@@ -34,6 +36,7 @@ while True:
         phone = input("Input Phone Number")
         time  = datetime.datetime.now()
         data_arrival[token] = Arrival(cnic, phone, time, token, '0')
+        print(data_arrival)
         print(token)
         token += 1
 
@@ -44,6 +47,7 @@ while True:
 
     print("End day?")
     if "yes" in input(">"):
-        with open(f"{datetime.date.today()}.txt","w") as f:
-            f.write(data_arrival[0].getter())
+        f = open(f"{datetime.date.today()}.txt","w")
+        for i in range(token):
+            f.write(data_arrival[i].getter())
         break

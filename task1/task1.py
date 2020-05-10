@@ -48,4 +48,5 @@ while True:
         f = open(f"{datetime.date.today()}.txt","w")
         for i in range(token):
             f.write(data_arrival[i].getter())
+        f.close()
         break

@@ -58,7 +58,7 @@ def main():
 
         ls=l.split('~')
 
-        Person.append(Individual(ls[0],ls[1],ls[2],ls[3].rstrip('\n')))
+        Person.append(Individual(ls[0],ls[1],ls[2],ls[3]))
 
     for ID in Person:
 

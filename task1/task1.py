@@ -3,14 +3,14 @@ import time
 
 
 class Arrival(object):
-    def __init__(self, cnic, phone, time, token, departure_time):
+    def __init__(self, cnic, phone, arrival_time, token, departure_time):
         self.cnic  = cnic
         self.phone = phone
-        self.time  = time
+        self.arrival_time  = arrival_time
         self.token = token
         self.departure_time = departure_time
     def getter(self):
-        return (f"{self.cnic}~{self.phone}~{self.time}~{self.departure_time} \n")
+        return (f"{self.cnic}~{self.phone}~{self.arrival_time}~{self.departure_time}~\n")
     def change_departure_time(self, new):
         self.departure_time = new
 
@@ -27,8 +27,8 @@ while True:
     if "arrival" in arrival_or_departure:
         cnic = input("Input CNIC Number")
         phone = input("Input Phone Number")
-        time  = time.ctime()
-        data_arrival[token] = Arrival(cnic, phone, time, token, '0')
+        arrival_time  = time.ctime()
+        data_arrival[token] = Arrival(cnic, phone, arrival_time, token, '0')
         print(f"Your token is {token}")
         token += 1
 

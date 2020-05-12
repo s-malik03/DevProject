@@ -25,7 +25,12 @@ while True:
     arrival_or_departure  = input(">")
     a = True
     if "arrival" in arrival_or_departure:
-        cnic = input("Input CNIC Number")
+        while True:
+            cnic = input("Input CNIC Number")
+            if len(cnic) == 13:
+                break
+            else:
+                cnic = input("Input CNIC Number")
         phone = input("Input Phone Number")
         arrival_time  = time.ctime()
         data_arrival[token] = Arrival(cnic, phone, arrival_time, token, '0')

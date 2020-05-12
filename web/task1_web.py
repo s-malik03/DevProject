@@ -15,8 +15,7 @@ class Arrival(object):
         return (f"{self.cnic}~{self.phone}~{self.arrival_time}~{self.departure_time}~\n")
     def change_departure_time(self, new):
         self.departure_time = new
-    def insert(self):
-        pass
+
 
 
 #change the format as mentioned in task1.txt
@@ -40,7 +39,7 @@ while True:
         arrival_time  = time.ctime()
         data_arrival[token] = Arrival(cnic, phone, arrival_time, token, '0')
         db = Arrival(cnic, phone, arrival_time, token, '0')
-        insert(db)
+        dbcode.insert(db)
         print(f"Your token is {token}")
         token += 1
 

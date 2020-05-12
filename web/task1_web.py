@@ -47,6 +47,9 @@ while True:
     elif "departure" in arrival_or_departure:
         user_token = int(input("Input token>"))
         Arrival.change_departure_time((data_arrival[user_token]) , time.ctime() )
+        Arrival.change_departure_time(db, time.ctime())
+        update(db)
+        
 
     print("End day?")
     if "yes" in input(">"):

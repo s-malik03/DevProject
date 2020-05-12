@@ -2,8 +2,10 @@ import sqlite3
 
 database = sqlite3.connect('example.db')
 c = database.cursor()
-
-c.execute('''CREATE TABLE information (CNIC text, PHONE text, ARRIVAL_TIME text, DEPARTURE_TIME text)''')
+try:
+    c.execute('''CREATE TABLE information (CNIC text, PHONE text, ARRIVAL_TIME text, DEPARTURE_TIME text)''')
+except sqlite3.OperationalError:
+    print("This ~~DATABASE~~ already exists")
 
 def insert(db):
     sql  = "INSERT INTO information VALUES ({},{},{},{})".format('"'+db.cnic+'"', '"'+db.phone+'"', '"'+db.arrival_time+'"', '"'+db.departure_time+'"') #fixed string quotation mark issue

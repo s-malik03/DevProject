@@ -39,7 +39,7 @@ while True:
         arrival_time  = time.ctime()
         data_arrival[token] = Arrival(cnic, phone, arrival_time, token, '0')
         db = Arrival(cnic, phone, arrival_time, token, '0')
-        dbcode.insert(db)
+        insert(db)
         print(f"Your token is {token}")
         token += 1
 

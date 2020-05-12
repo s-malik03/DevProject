@@ -1,7 +1,7 @@
 import datetime
 import time
 import sqlite3
-from db import *
+from dbcode import *
 
 
 class Arrival(object):
@@ -40,7 +40,7 @@ while True:
         arrival_time  = time.ctime()
         data_arrival[token] = Arrival(cnic, phone, arrival_time, token, '0')
         db = Arrival(cnic, phone, arrival_time, token, '0')
-        db.insert()
+        insert(db)
         print(f"Your token is {token}")
         token += 1
 

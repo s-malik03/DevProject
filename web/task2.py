@@ -1,4 +1,4 @@
-#IN PROGRESS
+#!/usr/bin/python3
 import time
 import datetime
 import cgi
@@ -7,8 +7,9 @@ import db_lib
 
 class Individual:
 
-    def __init__(self, CNIC, Phone, ArrivalTime, DepartureTime):
+    def __init__(self, Cookie, CNIC, Phone, ArrivalTime, DepartureTime):
 
+        self.Cookie=Cookie
         self.CNIC=CNIC
         self.Phone=Phone
         self.ArrivalTime=ArrivalTime
@@ -54,7 +55,7 @@ def main():
 
     for ls in f:
 
-        Person.append(Individual(ls[0],ls[1],ls[2],ls[3]))
+        Person.append(Individual(ls[0],ls[1],ls[2],ls[3],ls[4]))
 
     for ID in Person:
 

@@ -1,0 +1,18 @@
+<html>
+<head>
+<title>Welcome</title>
+</head>
+<body>
+ <form action="/cgi-bin/task1_arrival.py" method="post">
+  <label for="cnic">CNIC:</label><br>
+  <input type="text" id="cnic" name="cnic" required><br>
+  <label for="number">Phone Number:</label><br>
+  <input type="text" id="number" name="number" required><br>
+  <input type="submit" value="Arrival">
+</form>
+OR<br>
+<form action="/cgi-bin/task1_departure.py" method="post">
+	<input type="submit" value="Departure">
+</form>
+</body>
+</html>

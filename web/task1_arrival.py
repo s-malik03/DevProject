@@ -1,6 +1,8 @@
+#!/usr/bin/python3
 import datetime
 import time
 import db_lib
+import cgi
 
 def VerifyCNIC(CNIC):
 
@@ -22,13 +24,12 @@ def VerifyCNIC(CNIC):
 
 class Arrival(object):
     def __init__(self, cookie, cnic, phone, arrival_time, departure_time):
+        self.cookie=cookie
         self.cnic  = cnic
         self.phone = phone
         self.arrival_time  = arrival_time
-        self.cookie = cookie
         self.departure_time = departure_time
-    def getter(self):
-        return (f"{self.cnic}~{self.phone}~{self.arrival_time}~{self.departure_time}~\n")
+
     def change_departure_time(self, new):
         self.departure_time = new
 
@@ -44,11 +45,11 @@ def main():
 
     cookie=str(int(time.time()))
 
-    print("Set-Cookie:UID = {};\r\n".format(cookie))
+    print("Set-Cookie:UID = {};".format(cookie))
 
     print("Content-type: text/html\r\n\r\n")
     
-    data=cgi.fieldstorage()
+    data=cgi.FieldStorage()
 
     cnic=data["cnic"].value
 
@@ -58,7 +59,7 @@ def main():
 
     arrival_time=time.ctime()
 
-    data_arrival=Arrival(cookie,cnic,phone, arrival_time, '0')
+    data_arrival=Arrival(cookie,cnic,number,arrival_time,'0')
 
     db_lib.insert(DB, Conn, data_arrival)
 
@@ -66,6 +67,6 @@ def main():
 
     DB.close()
 
-    print('<html><head><meta http-equiv="refresh" content=0; url="index2.html"/></head></html>')
+    print('<html><body>THANK YOU!</body></html>')
 
 main()

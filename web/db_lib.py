@@ -6,17 +6,18 @@ def dbopen(dbname):
 
 def create_table(cursor):
     try:
-        cursor.execute('''CREATE TABLE information (CNIC text, PHONE text, ARRIVAL_TIME text, DEPARTURE_TIME text)''')
+        cursor.execute('''CREATE TABLE information (Cookie text, CNIC text, PHONE text, ARRIVAL_TIME text, DEPARTURE_TIME text)''')
     except sqlite3.OperationalError:
-        print("This ~~DATABASE~~ already exists")
+
+        return 1
 
 def insert(database,cursor,data):
-    sql  = "INSERT INTO information VALUES ({},{},{},{})".format('"'+data.cnic+'"', '"'+data.phone+'"', '"'+data.arrival_time+'"', '"'+data.departure_time+'"') #fixed string quotation mark issue
+    sql  = "INSERT INTO information VALUES ({},{},{},{})".format('"'+data.cookie+'"', '"'+data.cnic+'"', '"'+data.phone+'"', '"'+data.arrival_time+'"', '"'+data.departure_time+'"') #fixed string quotation mark issue
     cursor.execute(sql)
     database.commit() #added commit
 
 def update(database,cursor,key,data):
-    sql = "UPDATE information SET DEPARTURE_TIME = ({}) WHERE CNIC = {}".format('"'+db.departure_time+'"')
+    sql = "UPDATE information SET DEPARTURE_TIME = ({}) WHERE Cookie = {}".format('"'+db.departure_time+'"')
     cursor.execute(sql)
     database.commit()
 

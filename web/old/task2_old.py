@@ -3,7 +3,6 @@ import time
 import datetime
 import cgi
 import os
-import db_lib
 
 class Individual:
 
@@ -42,17 +41,34 @@ def main():
 
     data=cgi.FieldStorage()
 
-    DB=db_lib.dbopen(data["fname"].value)
+    while True:
 
-    Conn=DB.cursor()
+        fname=data["fname"].value
 
-    f=db_lib.read(Conn)
+        try:
+
+            f=open(fname,'r')
+
+            break
+
+        except:
+                
+            print("ERROR OPENING FILE!")
+
+            exit()
+
 
     CNICQuery=data["cnic"].value
 
+    while VerifyCNIC(CNICQuery)==1:
+
+        CNICQuery=input("Enter CNIC to initiate query (do not put '-'):")
+
     Person=[]
 
-    for ls in f:
+    for l in f:
+
+        ls=l.split('~')
 
         Person.append(Individual(ls[0],ls[1],ls[2],ls[3]))
 
@@ -84,7 +100,7 @@ def main():
 
                 print("\r<br>#MATCH#\r<br>CNIC: {}\r<br>NUMBER: {}\r<br>ARRIVALTIME: {}\r<br>DEPARTURETIME: {}\r<br>#".format(ID.CNIC,ID.Phone,ID.ArrivalTime,ID.DepartureTime))
 
-    DB.close()
+    f.close()
 
     print("</body></html>")
 

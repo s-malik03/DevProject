@@ -1,18 +1,63 @@
-<html>
-<head>
-<title>Welcome</title>
-</head>
-<body>
- <form action="/cgi-bin/task1_arrival.py" method="post">
-  <label for="cnic">CNIC:</label><br>
-  <input type="text" id="cnic" name="cnic" required><br>
-  <label for="number">Phone Number:</label><br>
-  <input type="text" id="number" name="number" required><br>
-  <input type="submit" value="Arrival">
+﻿<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<p id="date"></p>
+<script>
+
+function myfun(){
+  var cnic=document.getElementById('text1').value;
+  var phone=document.getElementById('text2').value;
+  document.getElementById("date").innerHTML = Date();
+  var timedate= Date()
+<! ok so the variable cnic stores the cnic the vriable phone stores the phone number and the variable timedate stores the time and date>
+
+}
+
+
+</script>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="task1style.css">
+
+    <style>
+  ::placeholder {
+    color: white;
+    opacity: 1; /* Firefox */
+  }
+
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color: white;
+  }
+
+  ::-ms-input-placeholder { /* Microsoft Edge */
+   color: white;
+  }
+  </style>
+  </head>
+  <body>
+<form action="/cgi-bin/task1_arrival.py" method="post">
+<div class="login-box">
+  <h1>User Information صارف کی معلومات</h1>
+  <div class="textbox">
+    <i class="fas fa-user"></i>
+    <input type="text" placeholder="CNIC (شناختی کارڈ نمبر)" id="cnic" name="cnic" required/><br>
+  </div>
+
+  <div class="textbox">
+    <i class="fas fa-phone-volume"></i>
+    <input type="text" placeholder="Phone Number (فون نمبر)" id="number" name="number" required/><br>
+  </div>
+
+
+  <a href="index2.html">
+    <input type="submit" class="btn" value="Submit (جمع کرائیں)" onclick="myfun()">
+
+  </a>
 </form>
-OR<br>
+<h2>Or Use This  یا اس کا استعمال کریں</h2>
 <form action="/cgi-bin/task1_departure.py" method="post">
-	<input type="submit" value="Departure">
+	<input type="submit" value="Departure" class="btn">
 </form>
-</body>
+</div>
+  </body>
 </html>

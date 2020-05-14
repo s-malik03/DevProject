@@ -33,7 +33,7 @@ DB.close()
 
 print("Content-type: text/html\r\n\r\n")
 
-print("<html><body>GOODBYE!")
+print('<html><body><meta http-equiv="refresh" content=0;url="/thankyoupage.html"/>')
 
 print(x)
 

@@ -67,6 +67,6 @@ def main():
 
     DB.close()
 
-    print('<html><body>THANK YOU!</body></html>')
+    print('<html><body><meta http-equiv="refresh" content=0;url="/thankyoupage.html"/></body></html>')
 
 main()

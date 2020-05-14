@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!C:/Users/User/AppData/Local/Programs/Python/Python38/python.exe
 import time
 import datetime
 import cgi

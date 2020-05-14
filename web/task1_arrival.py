@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!C:/Users/User/AppData/Local/Programs/Python/Python38/python.exe
 import datetime
 import time
 import db_lib
@@ -45,7 +45,7 @@ def main():
 
     cookie=str(int(time.time()))
 
-    print("Set-Cookie:UID = {};".format(cookie))
+    print("Set-Cookie:UID = {}; Max-Age=10000000;".format(cookie))
 
     print("Content-type: text/html\r\n\r\n")
     

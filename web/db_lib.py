@@ -28,7 +28,7 @@ def insert(database,cursor,data):
     database.commit() #added commit
 
 def update(database,cursor,key,data):
-    sql = "UPDATE information SET DEPARTURE_TIME = ({}) WHERE Cookie = {}".format('"'+db.departure_time+'"')
+    sql = "UPDATE information SET DEPARTURE_TIME = ({}) WHERE Cookie = {}".format('"'+data+'"','"'+key+'"')
     
     cursor.execute(sql)
 

@@ -57,6 +57,22 @@ def main():
 
     number=data["number"].value
 
+    try:
+
+        if number[0]=="+":
+
+            int(number)
+
+        else:
+
+            int(number)
+    
+    except:
+
+        print("INVALID NUMBER")
+
+        exit()
+
     arrival_time=time.ctime()
 
     data_arrival=Arrival(cookie,cnic,number,arrival_time,'0')
